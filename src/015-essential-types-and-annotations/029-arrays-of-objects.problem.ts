@@ -1,5 +1,9 @@
 type Recipe = {
   title: string;
+  ingredients: {
+    name: string;
+    quantity: string;
+  }[];
   instructions: string;
 };
 
@@ -8,10 +12,10 @@ const processRecipe = (recipe: Recipe) => {
 };
 
 processRecipe({
-  title: "Chocolate Chip Cookies",
+  title: 'Chocolate Chip Cookies',
   ingredients: [
-    { name: "Flour", quantity: "2 cups" },
-    { name: "Sugar", quantity: "1 cup" },
+    { name: 'Flour', quantity: '2 cups' },
+    { name: 'Sugar', quantity: '1 cup' },
   ],
-  instructions: "...",
+  instructions: '...',
 });
