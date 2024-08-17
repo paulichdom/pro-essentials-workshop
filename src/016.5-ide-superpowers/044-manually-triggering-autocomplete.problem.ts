@@ -7,12 +7,14 @@ type MyObj = {
 const acceptsObj = (obj: MyObj) => {};
 
 acceptsObj({
-  // Autocomplete in here!
+  foo: 'sdfsf',
+  bar: 10,
+  baz: true
 });
 
 document.addEventListener(
   // Autocomplete this string!
-  "",
+  "dragover",
   (event) => {
     console.log(event);
   },
