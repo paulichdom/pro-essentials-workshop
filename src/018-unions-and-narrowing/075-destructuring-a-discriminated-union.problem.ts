@@ -1,29 +1,31 @@
-import { Equal, Expect } from "@total-typescript/helpers";
-import { expect, it } from "vitest";
+import { Equal, Expect } from '@total-typescript/helpers';
+import { expect, it } from 'vitest';
 
 type Circle = {
-  kind: "circle";
+  kind: 'circle';
   radius: number;
 };
 
 type Square = {
-  kind: "square";
+  kind: 'square';
   sideLength: number;
 };
 
 type Shape = Circle | Square;
 
-function calculateArea({ kind, radius, sideLength }: Shape) {
-  if (kind === "circle") {
+function calculateArea(shape: Shape) {
+  if (shape.kind === 'circle') {
+    const { radius } = shape;
     return Math.PI * radius * radius;
   } else {
+    const { sideLength } = shape;
     return sideLength * sideLength;
   }
 }
 
-it("Should calculate the area of a circle", () => {
+it('Should calculate the area of a circle', () => {
   const result = calculateArea({
-    kind: "circle",
+    kind: 'circle',
     radius: 5,
   });
 
@@ -32,9 +34,9 @@ it("Should calculate the area of a circle", () => {
   type test = Expect<Equal<typeof result, number>>;
 });
 
-it("Should calculate the area of a square", () => {
+it('Should calculate the area of a square', () => {
   const result = calculateArea({
-    kind: "square",
+    kind: 'square',
     sideLength: 5,
   });
 
