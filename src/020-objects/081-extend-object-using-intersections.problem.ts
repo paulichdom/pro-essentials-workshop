@@ -1,18 +1,19 @@
-import { Extends, Expect } from "@total-typescript/helpers";
+import { Extends, Expect } from '@total-typescript/helpers';
+
+type BaseEntity = {
+  id: string;
+  createdAt: Date;
+};
 
 type User = {
-  id: string;
-  createdAt: Date;
   name: string;
   email: string;
-};
+} & BaseEntity;
 
-type Product = {
-  id: string;
-  createdAt: Date;
+type Product = BaseEntity & {
   name: string;
   price: number;
-};
+} & BaseEntity;
 
 type tests = [
   Expect<
@@ -36,5 +37,5 @@ type tests = [
       },
       Product
     >
-  >,
+  >
 ];
