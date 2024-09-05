@@ -1,4 +1,4 @@
-import { Equal, Expect } from "@total-typescript/helpers";
+import { Equal, Expect } from '@total-typescript/helpers';
 
 interface User {
   id: string;
@@ -7,8 +7,10 @@ interface User {
   role: string;
 }
 
-const fetchUser = async (): Promise<User> => {
-  const response = await fetch("/api/user");
+type PickedUser = Pick<User, 'name' | 'email'>;
+
+const fetchUser = async (): Promise<PickedUser> => {
+  const response = await fetch('/api/user');
   const user = await response.json();
   return user;
 };
