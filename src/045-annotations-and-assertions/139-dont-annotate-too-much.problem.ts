@@ -33,15 +33,10 @@ const users = [
   },
 ];
 
-const usersWithIds = users.map(
-  (
-    user,
-    index,
-  ) => ({
-    ...user,
-    id: index,
-  }),
-);
+const usersWithIds = users.map((user, index) => ({
+  ...user,
+  id: index,
+}));
 
 // TESTS
 
