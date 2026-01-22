@@ -1,5 +1,5 @@
 // Uncomment this line to see a stricter JSON.parse!
-// import '@total-typescript/ts-reset'
+import '@total-typescript/ts-reset'
 
 import { expect, it } from "vitest";
 
